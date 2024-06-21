@@ -1,22 +1,24 @@
 package com.shoppingcart.service;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 import java.util.List;
 
+@SpringBootTest
 public class ShoppingCartServiceTest {
 
-    private final ShoppingCartService shoppingCartService = new ShoppingCartService();
+    @Autowired
+    private ShoppingCartService shoppingCartService;
 
     private static final int APPLE_PRICE = 35;
     private static final int BANANA_PRICE = 20;
     private static final int MELON_PRICE = 50;
     private static final int LIME_PRICE = 15;
-
-
 
     @Test
     public void testCalculateTotal() {
